@@ -20,4 +20,7 @@ public class User {
 
     @Column(name = "idRole")
     int idRole;
+
+    @Column(name = "idSucursal")
+    int branchId;
 }
