@@ -5,6 +5,7 @@ import com.clinica.clinica.Response.Message;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +14,8 @@ import java.util.List;
 @Transactional
 public class PatientDao {
 
+    @Autowired
+    Message message;
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -27,10 +30,10 @@ public class PatientDao {
     public Message createPatient(Patients patients){
         try{
             entityManager.persist(patients);
-            return new Message(201, "Creado Exitosamente");
+            return message.createMessage(201, "Paciente Creado");
         }catch (Exception e){
             System.out.println(e.getMessage());
-            return new Message(400, "Error al crear Paciente");
+            return message.createMessage(500, "Error al crear paciente");
         }
     }
 
@@ -46,20 +49,21 @@ public class PatientDao {
             localPatient.setBirthday(patients.getBirthday());
             localPatient.setSex(patients.getSex());
             localPatient.setRoomId(patients.getRoomId());
-            return new Message(200, "Actualizado Exitosamente");
+            return message.createMessage(200, "Paciente actualizado correctamente");
         }catch (Exception e){
             System.out.println(e.getMessage());
-            return new Message(400, "Error al actualizar Paciente");
+            return message.createMessage(500, "Error al crear paciente");
         }
     }
 
     public Message deletePatient(long id){
         try{
-            entityManager.remove(id);
-            return new Message(200, "Eliminado Exitosamente");
+            Patients patients = entityManager.find(Patients.class, id);
+            entityManager.remove(patients);
+            return message.createMessage(204, "Paciente Eliminado Correctamente");
         }catch (Exception e){
             System.out.println(e.getMessage());
-            return new Message(400, "Error al crear Paciente");
+            return message.createMessage(500, "Error al crear paciente");
         }
     }
 }
