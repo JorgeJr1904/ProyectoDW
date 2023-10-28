@@ -8,7 +8,7 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @EqualsAndHashCode
 @Table(name = "modules")
-public class Modules {
+public class Module {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idmodule")

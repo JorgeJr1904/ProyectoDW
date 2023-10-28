@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 @Getter @Setter @ToString @EqualsAndHashCode
 @Table(name = "empleado")
-public class Employees {
+public class Employee {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

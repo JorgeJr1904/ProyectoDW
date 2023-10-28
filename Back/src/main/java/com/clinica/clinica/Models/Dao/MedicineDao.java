@@ -1,7 +1,7 @@
 package com.clinica.clinica.Models.Dao;
 
 import com.clinica.clinica.Models.Entities.Branch;
-import com.clinica.clinica.Models.Entities.Patients;
+import com.clinica.clinica.Models.Entities.Medicine;
 import com.clinica.clinica.Response.Message;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -13,7 +13,8 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class BranchDao {
+public class MedicineDao {
+
 
     @Autowired
     Message message;
@@ -21,43 +22,43 @@ public class BranchDao {
     @PersistenceContext
     EntityManager entityManager;
 
-    public List<Branch> listBranches(){
-        return entityManager.createQuery("FROM Branch").getResultList();
+    public List<Medicine> listMedicine(){
+        return entityManager.createQuery("FROM Medicine").getResultList();
     }
 
-    public Branch getBranch(int id){
-        return entityManager.find(Branch.class, id);
+    public Medicine getMedicine(int id){
+        return entityManager.find(Medicine.class, id);
     }
 
-    public Message createBranch(Branch branch){
+    public Message createMedicine(Medicine medicine){
         Message message = new Message();
         try{
-            entityManager.persist(branch);
+            entityManager.persist(medicine);
             return message.createMessage(201, "Creado Correctamente");
         }catch (Exception e){
             return message.createMessage(201, "Error en el sevidor");
         }
     }
 
-    public Message updateBranch(int id, Branch branch){
+    public Message updateMedicine(int id, Medicine medicine){
         Message message = new Message();
         try{
-            Branch localBranch = entityManager.find(Branch.class, id);
+            Medicine localmedicina = entityManager.find(Medicine.class, id);
             /*localBranch.setCode(branch.getCode());
             localBranch.setAddress(branch.getAddress());
             localBranch.setTel(branch.getTel());*/
-            branch.setId(id);
-            entityManager.merge(branch);
+            medicine.setId(id);
+            entityManager.merge(medicine);
             return message.createMessage(200, "Actualizado Correctamente");
         }catch (Exception e){
             return message.createMessage(500, "Error en el Servidor");
         }
     }
 
-    public Message deleteBranch(int id){
+    public Message deleteMedicine(int id){
         try{
-            Branch branch = entityManager.find(Branch.class, id);
-            entityManager.remove(branch);
+            Medicine medicine = entityManager.find(Medicine.class, id);
+            entityManager.remove(medicine);
             return message.createMessage(204, "Paciente Eliminado Correctamente");
         }catch (Exception e){
             System.out.println(e.getMessage());

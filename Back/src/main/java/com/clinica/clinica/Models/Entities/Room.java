@@ -7,21 +7,24 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@ToString
-@Getter
-@Setter
-@EqualsAndHashCode
-@Table(name = "examenes")
-public class Exams {
+@Getter @Setter @ToString @EqualsAndHashCode
+@Table(name = "habitacion")
+public class Room {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idexamen")
+    @Column(name = "idhabitacion")
     int id;
 
-    @Column(name = "nombre")
-    String name;
+    @Column(name = "codigohabitacion")
+    String roomCode;
+
+    @Column(name = "cantidadpacientes")
+    int maxPatient;
 
     @Column(name = "descripcion")
     String description;
+
+    @Column(name = "idsucursal")
+    int idBranch;
 
 }

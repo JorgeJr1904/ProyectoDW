@@ -9,7 +9,7 @@ import lombok.ToString;
 @Entity
 @ToString @Getter @Setter @EqualsAndHashCode
 @Table(name = "permissions")
-public class Permissions {
+public class Permission {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idpermission")

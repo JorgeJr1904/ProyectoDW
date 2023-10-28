@@ -6,7 +6,7 @@ import lombok.*;
 @Entity
 @Table(name = "sucursal")
 @Getter @Setter @EqualsAndHashCode @ToString
-public class Branches {
+public class Branch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +23,5 @@ public class Branches {
     String address;
 
     @Column(name = "telefono")
-    int tel;
+    String tel;
 }
