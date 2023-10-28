@@ -15,6 +15,9 @@ public class User {
     @Column(name = "iduser")
     int id;
 
+    @Column(name = "username")
+    String username;
+
     @Column(name = "vpassword")
     String password;
 

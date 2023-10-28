@@ -25,4 +25,14 @@ public class BranchController {
         return branchDao.createBranch(branch);
     }
 
+    @PutMapping(value = "update")
+    public Message updateBranch(@RequestBody Branch branch, @PathVariable int id){
+        return branchDao.updateBranch(id, branch);
+    }
+
+    @DeleteMapping(value = "delete")
+    public Message deleteBranch(@PathVariable int id){
+        return branchDao.deleteBranch(id);
+    }
+
 }
