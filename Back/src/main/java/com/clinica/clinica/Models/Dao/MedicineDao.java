@@ -5,11 +5,13 @@ import com.clinica.clinica.Models.Entities.Medicine;
 import com.clinica.clinica.Response.Message;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 @Transactional
@@ -22,6 +24,7 @@ public class MedicineDao {
     @PersistenceContext
     EntityManager entityManager;
 
+    //-------------------------------CRUD--------------------------------------------------------------------------
     public List<Medicine> listMedicine(){
         return entityManager.createQuery("FROM Medicine").getResultList();
     }
@@ -64,5 +67,24 @@ public class MedicineDao {
             System.out.println(e.getMessage());
             return message.createMessage(500, "Error al crear paciente");
         }
+    }
+    //FINALLY CRUD ----------------------------------------------------------------------------------------------
+
+    public List<Medicine> searchMedicine(String search){
+        try{
+            if (Objects.equals(search, "")){
+                return entityManager.createQuery("FROM Medicine").getResultList();
+            }else {
+                search = "%" + search + "%";
+                String sql = "FROM Medicine m WHERE m.code LIKE :medicine OR m.name LIKE :name";
+                return entityManager.createQuery(sql, Medicine.class)
+                        .setParameter("medicine", search)
+                        .setParameter("name", search)
+                        .getResultList();
+            }
+        }catch (Exception ex){
+            return null;
+        }
+
     }
 }

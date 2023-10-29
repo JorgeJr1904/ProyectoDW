@@ -28,6 +28,11 @@ public class MedicineController {
         return medicineDao.getMedicine(id);
     }
 
+    @GetMapping("search/{search}")
+    public List<Medicine> searchMedicine(@PathVariable String search){
+        return medicineDao.searchMedicine(search);
+    }
+
     @PostMapping("post")
     public Message createMedicine(@RequestBody Medicine medicine){
         return medicineDao.createMedicine(medicine);

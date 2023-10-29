@@ -1,6 +1,6 @@
 package com.clinica.clinica.Models.Dao;
 
-import com.clinica.clinica.Models.Entities.PatientExam;
+
 import com.clinica.clinica.Models.Entities.PatientHistory;
 import com.clinica.clinica.Response.Message;
 import jakarta.persistence.EntityManager;
