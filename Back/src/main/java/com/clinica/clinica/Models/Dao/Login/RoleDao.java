@@ -1,5 +1,6 @@
 package com.clinica.clinica.Models.Dao.Login;
 
+import com.clinica.clinica.Models.Entities.Login.Permission;
 import com.clinica.clinica.Models.Entities.Login.Role;
 import com.clinica.clinica.Response.Message;
 import jakarta.persistence.EntityManager;
@@ -17,6 +18,9 @@ public class RoleDao {
     @Autowired
     Message message;
 
+    @Autowired
+    PermissionDao permissionDao;
+
     @PersistenceContext
     EntityManager entityManager;
 
@@ -28,11 +32,12 @@ public class RoleDao {
         return entityManager.find(Role.class, id);
     }
 
-    public Message createRole(Role role){
+    public Message createRole(Role role, List<Permission> permissions){
         Message message = new Message();
         try{
             if (noRepeatRole(role.getRoleName())){
                 entityManager.persist(role);
+                permissionDao.createPermissions(role.getIdRole(), permissions);
                 return message.createMessage(201, "Creado Correctamente");
             }else {
                 return message.createMessage(404, "Rol No valido o ya existente");
