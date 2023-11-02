@@ -12,9 +12,7 @@ public class Message {
     private int status;
     private String message;
 
-
     public Message createMessage(int status, String message){
-        Message message1 = new Message(status, message);
-        return message1;
+        return new Message(status, message);
     }
 }

@@ -32,5 +32,3 @@ build/
 ### VS Code ###
 .vscode/
 
-#aplicacion Properties Java
-src/main/resources/application.properties
