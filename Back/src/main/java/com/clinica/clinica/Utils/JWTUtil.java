@@ -1,5 +1,6 @@
 package com.clinica.clinica.Utils;
 
+import com.clinica.clinica.Models.Entities.Login.Permission;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -13,6 +14,7 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class JWTUtil {
@@ -36,7 +38,7 @@ public class JWTUtil {
      * @param subject
      * @return
      */
-    public String create(String id, String subject, int userRole) {
+    public String create(String id, String subject, int userRole, int branch, List<Permission> permissions) {
 
         // The JWT signature algorithm used to sign the token
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
@@ -55,6 +57,8 @@ public class JWTUtil {
                 .setSubject(subject)
                 .setIssuer(issuer)
                 .claim("idRole", userRole)
+                .claim("branch", branch)
+                .claim("permissions", permissions)
                 .signWith(signatureAlgorithm, signingKey);
 
         if (ttlMillis >= 0) {
@@ -105,4 +109,14 @@ public class JWTUtil {
 
         return (int) claims.get("idRole");
     }
+
+    public List<Permission> getPermissions(String jwt) {
+        // This line will throw an exception if it is not a signed JWS (as
+        // expected)
+        Claims claims = Jwts.parser().setSigningKey(DatatypeConverter.parseBase64Binary(key))
+                .parseClaimsJws(jwt).getBody();
+
+        return (List<Permission>) claims.get("permissions");
+    }
+
 }
