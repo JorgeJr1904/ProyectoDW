@@ -23,11 +23,10 @@ public class EmployeeDao {
     public List<Employee> getEmployees(){
         try{
             String sql = "From Employee";
-            entityManager.createQuery(sql).getResultList();
+            return entityManager.createQuery(sql).getResultList();
         }catch (Exception ex){
             return null;
         }
-        return null;
     }
 
     public Employee getEmployee(long id){
