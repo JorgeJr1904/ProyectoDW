@@ -21,9 +21,9 @@ public class User {
     @Column(name = "vpassword")
     String password;
 
-    @Column(name = "idRole")
+    @Column(name = "idrole")
     int idRole;
 
-    @Column(name = "idSucursal")
+    @Column(name = "idsucursal")
     int branchId;
 }
