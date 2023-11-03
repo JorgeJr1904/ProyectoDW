@@ -32,7 +32,7 @@ public class PatientHistoryController {
         return patientHistoryDao.createPatientHistory(patientHistory);
     }
 
-    @PutMapping("put/{id}")
+    @PutMapping("update/{id}")
     public Message updatePatientHistory(@RequestBody PatientHistory patientHistory, @PathVariable int id){
         return patientHistoryDao.updatePatientHistory(patientHistory, id);
     }

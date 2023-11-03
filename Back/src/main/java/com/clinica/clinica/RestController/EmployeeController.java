@@ -30,7 +30,7 @@ public class EmployeeController {
         return employeeDao.createEmployee(employee);
     }
 
-    @PutMapping("put/{id}")
+    @PutMapping("update/{id}")
     public Message updateEmployee(@RequestBody Employee employee, @PathVariable long id){
         return employeeDao.updateEmployee(employee, id);
     }

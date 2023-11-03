@@ -32,7 +32,7 @@ public class RoomController {
         return roomDao.createRoom(room);
     }
 
-    @PutMapping("put/{id}")
+    @PutMapping("update/{id}")
     public Message updateRoom(@RequestBody Room room, @PathVariable int id){
         return roomDao.updateRoom(room, id);
     }

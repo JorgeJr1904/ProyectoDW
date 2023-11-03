@@ -30,10 +30,12 @@ public class ExamController {
         return examDao.createExam(exam);
     }
 
+    @PutMapping("update/{id}")
     public Message updateExam(@RequestBody Exam exam, @PathVariable int id){
         return examDao.updateExam(exam, id);
     }
 
+    @DeleteMapping("delete/{id}")
     public Message deleteExam(@PathVariable int id){
         return examDao.deleteExam(id);
     }

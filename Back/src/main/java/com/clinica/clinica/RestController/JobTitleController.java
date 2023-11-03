@@ -30,7 +30,7 @@ public class JobTitleController {
         return jobTitleDao.createJobTitle(jobTitle);
     }
 
-    @PutMapping("put/{id}")
+    @PutMapping("update/{id}")
     public Message updateJobTitle(@RequestBody JobTitle jobTitle, @PathVariable int id){
         return jobTitleDao.updateJobTitle(jobTitle, id);
     }

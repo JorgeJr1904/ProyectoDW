@@ -32,7 +32,7 @@ public class PatientExamController {
         return patientExamDao.createPatientExam(patientExam);
     }
 
-    @PutMapping("put/{id}")
+    @PutMapping("update/{id}")
     public Message updatePatientExamDao(@RequestBody PatientExam patientExam, @PathVariable int id){
         return patientExamDao.updatePatientExam(patientExam, id);
     }
