@@ -1,0 +1,100 @@
+.hospital-navbar {
+    background-color: #ACD9B2;
+}
+
+.hospital-navbar .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+}
+
+.hospital-navbar .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.hospital-navbar .navbar-nav .nav-link:hover {
+    background-color: #007bff;
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 80vh;
+    border-radius: 5%;
+}
+
+h1 {
+    font-size: 24px;
+    color: #007bff;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: unset;
+}
+
+nav{
+	max-width: 900px;
+	margin: auto;
+	background-color: #489ea4;
+	font-size: 20px;
+}
+.menu-horizontal{
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+.menu-horizontal > li > a{
+	display: block;
+	padding: 15px 20px;
+    border-radius: 50%;
+	color: white;
+	text-decoration: none;
+}
+.menu-horizontal > li:hover{
+    
+	background-color: rgb(2, 85, 140);
+    border-radius: 50px;
+}
+.menu-vertical{
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 200px;
+	background-color: rgba(7, 46, 68, 0.5);
+}
+.menu-horizontal li:hover .menu-vertical{
+	display: block;
+}
+.menu-vertical li:hover{
+	background-color: rgb(30, 107, 152);
+    border-radius: 50px;
+}
+
+.menu-vertical li a{
+	display: block;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	padding: 15px 15px 15px 20px;
+}
+
+#html{
+	margin: auto;
+	padding: 20px;
+	max-width: 900px;
+	background: white;
+
+}

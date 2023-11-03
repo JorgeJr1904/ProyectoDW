@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/pacienctes.css">
+    <title>Lista de Empleados - Hospital Central</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+       body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images3.alphacoders.com/101/1010294.jpg');
+    margin: 0;
+    padding: 0;
+    } 
+
+nav a.active {
+    background-color: #109ada;
+    color: #fff;
+    border-radius: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <nav style="border-radius: 50px; ">
+		<ul class="menu-horizontal">
+            <li><a style="  font-size: 100%; color: aliceblue;">Hospital</a></li>
+			<li><a href='index.html'>Inicio</a></li>
+			<li>
+				<a href='#' class="active">Pasientes</a>
+			</li>
+			<li>
+				<a href="list_products.html">Inv.Medicamentos</a>
+			</li>
+			<li>
+                <a href='list_employees.html'>Empleados</a>
+            </li>
+            <li>
+                <a href='bedrooms.html'>Hab.Disponibles</a>
+            </li>
+                <img src="https://cdn-icons-png.flaticon.com/512/56/56805.png" style="width: 30px; height: 30px; margin-top: 17px;">
+		</ul>
+	</nav>
+
+    <br>
+    <div class="container">
+        <h1>Lista de pacientes</h1>
+        <table class="table table-hover table-hover-pointer">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Habitación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="location.href='employee.html'">
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>Habitación 3</td>
+                </tr>
+                <tr onclick="location.href='employee.html'">
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>Habitación 156</td>
+                </tr>
+                <tr onclick="location.href='employee.html'">
+                    <td>3</td>
+                    <td>Robert Johnson</td>
+                    <td>Habitación 99</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
