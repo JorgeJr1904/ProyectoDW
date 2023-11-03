@@ -43,4 +43,7 @@ public class Employee {
 
     @Column(name = "idpuesto")
     int JobTitleId;
+
+    @Column(name = "idsucursal")
+    int branchId;
 }
