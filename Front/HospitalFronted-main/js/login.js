@@ -9,6 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         password: password
     };
 
+    
     fetch("http://206.189.200.204:8080/api/v1/login", {
         method: "POST",
         headers: {
