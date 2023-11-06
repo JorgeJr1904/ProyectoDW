@@ -22,9 +22,15 @@ public class PatientHistoryController {
         return patientHistoryDao.getPatientHistory();
     }
 
+
     @GetMapping("{id}")
     public PatientHistory getPatientHistory(@PathVariable int id){
         return patientHistoryDao.getPatientHistory(id);
+    }
+
+    @GetMapping("history/{id}")
+    public List<PatientHistory> historyList(@PathVariable long id){
+        return patientHistoryDao.historyList(id);
     }
 
     @PostMapping("post")

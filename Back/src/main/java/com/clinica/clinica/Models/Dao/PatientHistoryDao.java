@@ -70,4 +70,11 @@ public class PatientHistoryDao {
             return message.createMessage(500, "Error en el servidor");
         }
     }
+
+    //__________________________________ INNER Join Patient History ___________________________________
+
+    public List<PatientHistory> historyList(long patientId){
+        String sql = "FROM PatientHistory p WHERE p.idPatient = :patientId";
+        return entityManager.createQuery(sql).setParameter("patientId", patientId).getResultList();
+    }
 }

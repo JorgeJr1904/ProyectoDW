@@ -20,6 +20,11 @@ public class BranchController {
         return branchDao.listBranches();
     }
 
+    @GetMapping("{id}")
+    public Branch getBranche (@PathVariable int id){
+        return branchDao.getBranch(id);
+    }
+
     @PostMapping(value = "post")
     public Message postBranch(@RequestBody Branch branch){
         return branchDao.createBranch(branch);
