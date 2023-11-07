@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/pacientes.css">
+    <title>Lista de Empleados - Hospital Central</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+       body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images3.alphacoders.com/101/1010294.jpg');
+    margin: 0;
+    padding: 0;
+    } 
+
+
+.container {
+  max-width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el panel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Color azul hospital para el encabezado */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important; /* Forzar el color de texto a blanco */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f2f2f2 !important; /* Cambiar el color del texto al pasar el cursor */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+nav a.active {
+    background-color: #109ada;
+    color: #fff;
+    border-radius: 50px;
+}
+    </style>
+</head>
+<body>
+    
+   <nav style="border-radius: 50px; ">
+        <ul class="menu-horizontal">
+            <li><a style="  font-size: 100%; color: aliceblue;">Hospital</a></li>
+            <li><a href='index.html'>Inicio</a></li>
+            <li>
+                <a href='patient_list.html' class="active">Pacientes</a>
+            </li>
+            <li>
+                <a href="list_products.html">Inv.Medicamentos</a>
+            </li>
+            <li>
+                <a href='list_employees.html'>Empleados</a>
+            </li>
+            <li>
+                <a href='bedrooms.html'>Hab.Disponibles</a>
+            </li>
+                <img src="https://cdn-icons-png.flaticon.com/512/56/56805.png" style="width: 30px; height: 30px; margin-top: 17px;">
+        </ul>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <h1>Agregar Paciente</h1>
+        <form>
+            <div class="form-group">
+                <label for="dpi_employ">DPI:</label>
+                <input type="tel" class="form-control" id="dpi_employ" name="dpi_employ" placeholder="Ingrese dpi" maxlength="13" required>
+            </div>
+            <div class="form-group">
+                <label for="nom_employ">Nombres:</label>
+                <input type="text" class="form-control" id="nom_employ" name="nom_employ" placeholder="Nombre del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="ape_employ">Apellidos:</label>
+                <input type="text" class="form-control" id="ape_employ" name="ape_employ" placeholder="Apellidos del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="tel_employ">Teléfono:</label>
+                <input type="tel" class="form-control" id="tel_employ" name="tel_employ" placeholder="Teléfono de contacto" required>
+            </div>
+            <div class="form-group">
+                <label for="dire_employ">Dirección:</label>
+                <input type="text" class="form-control" id="dire_employ" name="dire_employ" placeholder="Dirección del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="mail_employ">Correo:</label>
+                <input type="email" class="form-control" id="mail_employ" name="mail_employ" placeholder="Correo del empleado" required>
+            </div>
+            
+            <div class="form-group">
+            <label for="blo_employ">Seleccione tipo de sangre:</label>
+            <select id="blo_employ" name="blo_employ">
+                <option value="null"></option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+            </div>
+            <!--div class="form-group">
+                <label for="fechanac_employ">Fecha Nacimiento:</label>
+                <input type="date" class="form-control" id="fechanac_employ" name="fechanac_employ" maxlength="10" required>
+            </div-->
+            <div class="form-group">
+                <label for="gene_employ">Genero</label>
+
+                <select id="gene_employ" name="gene_employ">
+                    <option value="null"></option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                </div>
+
+            <div class="form-group">
+                <label for="puesto_employ">Puesto:</label>
+                <input type="number" class="form-control" id="puesto_employ" name="puesto_employ" placeholder="ID Puesto del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="emp_sucur_employ">Sucursal:</label>
+                <input type="number" class="form-control" id="emp_sucur_employ" name="emp_sucur_employ" placeholder="ID Sucursal asignado" required>
+            </div>
+            <!--div class="col-md-6">
+                <img id="EmployImage" src="https://cdn.icon-icons.com/icons2/67/PNG/512/user_13230.png" alt="avatar" style="width: 120px;">
+                <p></p>
+                <button id="upphoto" onclick="upphoto()" class="btn btn-info" style="display:inline;">Subir fotografía</button>
+
+            </div-->
+             <div class="text-center">
+                <button type="button" id="newemp" onclick="nuevoempleado()" class="btn btn-info">Guardar paciente</button>
+                <button type="button" id="saveemp" onclick="asig_employ()" class="btn btn-info">Asignar paciente</button>
+                <button id="cancelButton" onclick="window.location.href='./patient_list.html'" type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+<script src="employee_data_old.js"></script>

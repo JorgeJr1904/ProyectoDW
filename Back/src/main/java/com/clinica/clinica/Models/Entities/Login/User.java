@@ -15,12 +15,15 @@ public class User {
     @Column(name = "iduser")
     int id;
 
+    @Column(name = "username")
+    String username;
+
     @Column(name = "vpassword")
     String password;
 
-    @Column(name = "idRole")
+    @Column(name = "idrole")
     int idRole;
 
-    @Column(name = "idSucursal")
+    @Column(name = "idsucursal")
     int branchId;
 }

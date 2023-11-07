@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla con Enlaces (JavaScript)</title>
+</head>
+<body>
+
+<h1>Listado de Datos</h1>
+
+<table border="1" id="tablaDatos">
+    <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+    </tr>
+</table>
+<div class="form-group">
+    <label for="name_emp">Nombres:</label>
+    <input type="text" class="form-control" id="name_emp" name="name_emp" placeholder="Nombre del empleado" required>
+</div>
+<script>
+    // Suponiendo que tienes un array de datos llamado registros
+    var registros = [
+        { nombre: "Juan", edad: 30, enlace: "http://www.google.com" },
+        { nombre: "María", edad: 25, enlace: "http://www.facebook.com" },
+        { nombre: "Carlos", edad: 35, enlace: "http://www.hotmail.com" }
+    ];
+
+    var tabla = document.getElementById("tablaDatos");
+
+    registros.forEach(function(registro) {
+        var row = tabla.insertRow();
+        var cellNombre = row.insertCell(0);
+        var cellEdad = row.insertCell(1);
+
+        cellNombre.innerHTML = registro.nombre;
+        cellEdad.innerHTML = registro.edad;
+
+        // Crear un enlace alrededor de toda la fila
+        row.addEventListener('click', function() {
+            window.location.href = registro.enlace;
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
