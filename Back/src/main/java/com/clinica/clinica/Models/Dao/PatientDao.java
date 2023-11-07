@@ -56,6 +56,8 @@ public class PatientDao {
         }
     }
 
+
+
     public Message deletePatient(long id){
         try{
             Patients patients = entityManager.find(Patients.class, id);

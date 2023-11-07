@@ -15,23 +15,23 @@ public class PatientHistory {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idhistorial")
-    int id;
+    private int id;
 
     @Column(name = "diagnostico")
-    String diagnosis;
+    private String diagnosis;
 
     @Column(name = "peso")
-    BigDecimal weight;
+    private BigDecimal weight;
 
     @Column(name = "altura")
-    BigDecimal height;
+    private BigDecimal height;
 
     @Column(name = "descripcion")
-    String description;
+    private String description;
 
     @Column(name = "estado")
-    char status;
+    private char status;
 
     @Column(name = "idpaciente")
-    long idPatient;
+    private long idPatient;
 }
