@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/pacientes.css">
+    <title>Lista de Empleados - Hospital Central</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+       body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images3.alphacoders.com/101/1010294.jpg');
+    margin: 0;
+    padding: 0;
+    } 
+
+
+.container {
+  max-width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el panel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Color azul hospital para el encabezado */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important; /* Forzar el color de texto a blanco */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f2f2f2 !important; /* Cambiar el color del texto al pasar el cursor */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+nav a.active {
+    background-color: #109ada;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.input-with-select {
+            position: relative;
+            display: inline-block;
+        }
+
+        .input-with-select select {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav style="border-radius: 50px; ">
+        <ul class="menu-horizontal">
+            <li><a style="  font-size: 100%; color: aliceblue;">Hospital.</a></li>
+            <li><a href='index.html'>Inicio</a></li>
+            <li>
+                <a href='patient_list.html' class="active">Pacientes</a>
+            </li>
+            <li>
+                <a href='list_products.html'>Medicamentos</a>
+            </li>
+            <li>
+                <a href='list_employees.html'>Empleados</a>
+            </li>
+            <li>
+                <a href='bedrooms.html'>Habitaciones</a>
+            </li>
+            <a href='settings_mod.html'><img src="https://icon-library.com/images/settings-icon-flat/settings-icon-flat-6.jpg" alt="Configuración" style="width: 35px; height: 35px; margin-top: 12px; margin-right: 15px;"></a>
+                <a href="#" ><img src="https://pbs.twimg.com/media/DWW3YHwV4AA5XxJ?format=png&name=240x240" alt="Cerrar sesion" style="width: 35px; height: 35px; margin-top: 12px; margin-right: 20px;"></a>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Agregar Paciente</h1>
+        <form>
+            <div class="form-group">
+                <label style="display: none;" for="dpi_emple">DPI:</label>
+                <input type="tel" class="form-control" id="dpi_emple" name="dpi_emple" placeholder="Ingrese DPI" maxlength="13" required>
+            </div>
+            <div class="form-group">
+                <label style="display: none;" for="name_emple">Nombres:</label>
+                <input type="text" class="form-control" id="name_emple" name="name_emple" placeholder="Nombre del empleado" required>
+            </div>
+            <div class="form-group">
+                <label style="display: none;" for="apellido_emple">Apellidos:</label>
+                <input type="text" class="form-control" id="apellido_emple" name="apellido_emple" placeholder="Apellidos del empleado" required>
+            </div>
+            <div>
+                <input style="width: min-content; display: inline;" type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono de contacto" required>
+                <input style="width: auto; display: inline;" type="email" class="form-control" id="mail" name="mail" placeholder="Correo del empleado" required>
+           <p></p>
+            </div>
+            <div class="form-group">
+                <label style="display: none;" for="dire">Dirección:</label>
+                <input type="text" class="form-control" id="dire" name="dire" placeholder="Dirección del empleado" required>
+            </div>
+            <div class="form-group">
+            <label for="blo">Seleccione tipo de sangre:</label>
+            <select id="blo" name="blo">
+                <option value="null"></option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+
+                <label for="gene">Genero</label>
+                <select id="gene" name="gene" required>
+                    <option value="null"></option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label style="display: none;" for="fechabirth">Fecha:</label>
+                    <input style="width: min-content;" type="date" class="form-control" id="fechabirth" name="fechabirth" placeholder="Fecha de nacimiento" required>
+                </div>
+            <div class="form-group">
+                <label style="display: none;" for="roompac">room:</label>
+                <input type="number" class="form-control" style="display: inline; width: min-content;" id="roompac" name="roompac" placeholder="ID habitacion" required>
+              </div>
+             <div class="text-center">
+                <button type="button" id="guarda_emple" onclick=add_patient() class="btn btn-success">Guardar empleado</button>
+                <button id="cancelButton" onclick="window.location.href='./patient_list.html'" type="button" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+s<script src="add_patient.js"></script>

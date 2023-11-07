@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/employes.css">
+    <title>Empleados - Hospital Central</title>
+    <style>
+                @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+     body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images3.alphacoders.com/101/1010294.jpg');
+    margin: 0;
+    padding: 0;
+    }
+
+        .hospital-navbar {
+            background-color: #ACD9B2; /* Color verde hospital */
+        }
+
+        .hospital-navbar .navbar-brand {
+            color: #fff; /* Texto blanco */
+            font-size: 24px;
+        }
+
+        .hospital-navbar .navbar-nav .nav-link {
+            color: #fff; /* Texto blanco */
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* Fondo blanco para el panel */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Color azul hospital para el encabezado */
+        }
+
+        .employee-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .employee-avatar {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .employee-info {
+            margin-top: 10px;
+        }
+
+        .btn-add-employee {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+nav{
+    max-width: 900px;
+    margin: auto;
+    background-color: #489ea4;
+    font-size: 20px;
+}
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.menu-horizontal > li > a{
+    display: block;
+    padding: 20px 15px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+.menu-horizontal > li:hover{
+    
+    background-color: rgb(2, 85, 140);
+    border-radius: 50px;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(7, 46, 68, 0.5);
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical li:hover{
+    background-color: rgb(30, 107, 152);
+    border-radius: 50px;
+}
+
+.menu-vertical li a{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 15px 15px 20px;
+}
+
+#html{
+    margin: auto;
+    padding: 20px;
+    max-width: 900px;
+    background: white;
+
+}
+nav a.active {
+    background-color: #109ada;
+    color: #fff;
+    border-radius: 50px;
+}
+    </style>
+</head>
+<body>
+
+
+    <nav style="border-radius: 50px; ">
+        <ul class="menu-horizontal">
+            <li><a style="  font-size: 100%; color: aliceblue;">Hospital.</a></li>
+            <li><a href='index.html'>Inicio</a></li>
+            <li>
+                <a href='patient_list.html' >Pacientes</a>
+            </li>
+            <li>
+                <a href='list_products.html'>Medicamentos</a>
+            </li>
+            <li>
+                <a href='list_employees.html'>Empleados</a>
+            </li>
+            <li>
+                <a href='bedrooms.html' class="active">Habitaciones</a>
+            </li>
+            <a href='settings_mod.html'><img src="https://icon-library.com/images/settings-icon-flat/settings-icon-flat-6.jpg" alt="Configuración" style="width: 35px; height: 35px; margin-top: 12px; margin-right: 15px;"></a>
+                <a href="#" ><img src="https://pbs.twimg.com/media/DWW3YHwV4AA5XxJ?format=png&name=240x240" alt="Cerrar sesion" style="width: 35px; height: 35px; margin-top: 12px; margin-right: 20px;"></a>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Detalle de la habitación</h1>
+        <div class="container">
+                <div>
+                    <label for="dpi_emp" style="border: none;">Id sala:</label>
+                        <input class="contenedor-inputs" type="number" disabled style="width: auto; border: none;background-color: transparent; outline: none;font-size: 22px; font-weight: bold;" id="dpi_emp" placeholder="dpi empleado">
+                </div>
+                <div>
+                    <label for="telef" style="border: none;">Código sala:</label>
+                        <input class="contenedor-inputs" type="text" disabled style="width: 200px; border: none;background-color: transparent; outline: none;font-size: 16px; font-weight: bold;" id="telef" placeholder="Telefono">
+                </div>
+                <div>
+                    <label for="direcc" style="border: none;">Max. Pacientes:</label>
+                        <input class="contenedor-inputs" type="number" disabled style="width: 200px; border: none;background-color: transparent; outline: none;font-size: 16px; font-weight: bold;" id="direcc" placeholder="Direccion">
+                </div>
+                <div>
+                    <label for="email1" style="border: none;">Descripción:</label>
+                        <input class="contenedor-inputs" type="text" disabled style="width: 300px; border: none;background-color: transparent; outline: none;font-size: 16px; font-weight: bold;" id="email1" placeholder="Correo">
+                </div>
+                <div>
+                    <label for="blood_emp" style="border: none;">Id sucursal:</label>
+                        <input class="contenedor-inputs" type="number" disabled style="width: 200px; border: none;background-color: transparent; outline: none;font-size: 16px; font-weight: bold;" id="blood_emp" placeholder="Tipo de sangre">
+                    </div>
+        </div>
+
+
+        
+        <!-- Agrega más tarjetas de empleados aquí -->
+
+        <div class="text-center">
+        <button id="add_emple_but" onclick="window.location.href='./bedrooms.html'" type="button"class="btn btn-primary">Agregar Habitación</button>
+        <button id="mod_emp_bot" onclick="mod_emple_input()" type="button" class="btn btn-warning">Editar Habitación</button>   
+        <button id="save_mod_emp" onclick="save_mod_emple_input()" style="display: none;" type="button" class="btn btn-success">Guardar modificaciones</button>   
+        <button id="deleteempleado" onclick="deleteEmploy()" type="button" class="btn btn-danger">Eliminar</button>   
+        <button id="cancelButton" onclick="window.location.href='./bedrooms.html'" type="button" class="btn btn-secondary">Cancelar</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="room_details.js"></script>

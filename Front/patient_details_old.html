@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Empleados - Hospital Central</title>
+    <style>
+     body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images3.alphacoders.com/101/1010294.jpg');
+    margin: 0;
+    padding: 0;
+    }
+
+        .hospital-navbar {
+            background-color: #ACD9B2; /* Color verde hospital */
+        }
+
+        .hospital-navbar .navbar-brand {
+            color: #fff; /* Texto blanco */
+            font-size: 24px;
+        }
+
+        .hospital-navbar .navbar-nav .nav-link {
+            color: #fff; /* Texto blanco */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* Fondo blanco para el panel */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Color azul hospital para el encabezado */
+        }
+
+        .employee-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .employee-avatar {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .employee-info {
+            margin-top: 10px;
+        }
+
+        .btn-add-employee {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+nav{
+    max-width: 900px;
+    margin: auto;
+    background-color: #489ea4;
+    font-size: 20px;
+}
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.menu-horizontal > li > a{
+    display: block;
+    padding: 20px 15px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+.menu-horizontal > li:hover{
+    
+    background-color: rgb(2, 85, 140);
+    border-radius: 50px;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(7, 46, 68, 0.5);
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical li:hover{
+    background-color: rgb(30, 107, 152);
+    border-radius: 50px;
+}
+
+.menu-vertical li a{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 15px 15px 20px;
+}
+
+#html{
+    margin: auto;
+    padding: 20px;
+    max-width: 900px;
+    background: white;
+
+}
+nav a.active {
+    background-color: #109ada;
+    color: #fff;
+    border-radius: 50px;
+}
+    </style>
+</head>
+<body>
+
+
+    <nav style="border-radius: 50px; ">
+        <ul class="menu-horizontal">
+            <li>
+                <a style="  font-size: 100%; color: aliceblue;">Hospital.</a>
+            </li>
+            <li>
+                <a href='index.html'>Inicio</a>
+            </li>
+            <li>
+                <a href='patient_list.html'  class="active">Pacientes</a>
+            </li>
+            <li>
+                <a href="list_products.html">Inv.Medicamentos</a>
+            </li>
+            <li>
+                <a href='list_employees.html'>Empleados</a>
+            </li>
+            <li>
+                <a href='bedrooms.html'>Hab.Dispinibles</a>
+            </li>
+            
+                <img src="https://pbs.twimg.com/media/DWW3YHwV4AA5XxJ?format=png&name=240x240" style="width: 30px; height: 30px; margin-top: 22px;">
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Ficha de Paciente</h1>
+        
+        <!-- Ejemplo de un empleado -->
+        <div class="employee-card">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="https://cdn.icon-icons.com/icons2/67/PNG/512/user_13230.png" alt="Avatar" class="employee-avatar">
+                </div>
+                <div class="col-md-9 employee-info">
+                            <label for="name_emp" class="sr-only">name_emp</label>
+                        <input type="text" readonly class="form-control-plaintext" id="name_emp" Value="NombreEmpleado">
+
+                        <p>Cargo: Enfermera</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: empleado@example.com</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        
+        <!-- Agrega más tarjetas de empleados aquí -->
+
+        <div class="text-left">
+            <button id="add_paci_btn" onclick="window.location.href='./add_patient.html'" type="button"class="btn btn-primary">Agregar paciente</button>
+        <button id="deletepaciente" onclick="deletePaciente()" type="button" class="btn btn-danger">Eliminar</button>
+            <button id="cancelButton" onclick="window.location.href='./patient_list.html'" type="button" class="btn btn-secondary">Cancelar</button>
+        </div>
+    </div>
+
+</body>
+</html>
